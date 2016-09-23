@@ -19,6 +19,10 @@ namespace Tarea6
         Hashtable diccionario;
         //Para el ejercicio 3
         Queue clientes;
+        //Para el ejercicio 4
+        Hashtable regGastos;
+        Stack gastos;
+        int numGastos = 1;
         //Para el ejercicio 5
         Hashtable agenda;
         public Form1()
@@ -28,6 +32,9 @@ namespace Tarea6
             diccionario = new Hashtable();
             clientes = new Queue();
             agenda = new Hashtable();
+            regGastos = new Hashtable();
+            gastos = new Stack();
+            LB.Text = "Dia "+Convert.ToString(numGastos);
         }
        //Funciones o metodos para el ejercicio 1
        public float sumatoriaCalf(ArrayList notas)
@@ -148,5 +155,30 @@ namespace Tarea6
                 ContContactos.AppendText(contacto.Key + " - " + contacto.Value + "\n");
         }
         //Fin de las funciones o metodos para el ejercicio 5
+        //Funciones o metodos para el ejercicio 4
+        private void mostrarGastos(Stack gastos)
+        {
+            ContGastros.Clear();
+            foreach (string gasto in gastos)
+                ContGastros.AppendText(gasto + "\n");
+        }
+        private void Registrar_Click(object sender, EventArgs e)
+        {
+            if(!string.IsNullOrEmpty(TBGasto.Text))
+            {
+                gastos.Push(LB.Text + "\n Gastos: " + TBGasto.Text);
+                TBGasto.Clear();
+                TBGasto.Focus();
+                mostrarGastos(gastos);
+                if(numGastos > 30)
+                {
+                    gastos.Clear();
+                    ContGastros.Clear();
+                    numGastos = 0;
+                }
+                LB.Text = "Dia " + Convert.ToString(++numGastos);
+            }
+        }
+
     }
 }
