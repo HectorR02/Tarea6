@@ -19,12 +19,15 @@ namespace Tarea6
         Hashtable diccionario;
         //Para el ejercicio 3
         Queue clientes;
+        //Para el ejercicio 5
+        Hashtable agenda;
         public Form1()
         {
             InitializeComponent();
             notas = new ArrayList();
             diccionario = new Hashtable();
             clientes = new Queue();
+            agenda = new Hashtable();
         }
        //Funciones o metodos para el ejercicio 1
        public float sumatoriaCalf(ArrayList notas)
@@ -126,5 +129,24 @@ namespace Tarea6
                 AtClient.Enabled = false;
         }
         //Fin de las funciones o metodos para el ejercicio 3
+        //Funciones o metodos para el ejercicio 5
+        private void Agendar_Click(object sender, EventArgs e)
+        {
+            if(!string.IsNullOrEmpty(TBNombre.Text) && !string.IsNullOrEmpty(TBTalf.Text))
+            {
+                agenda.Add(TBNombre.Text, TBTalf.Text);
+                if (!BAgenda.Enabled)
+                    BAgenda.Enabled = true;
+                TBTalf.Text = TBNombre.Text = null;
+                TBNombre.Focus();
+            }
+        }
+        private void BAgenda_Click(object sender, EventArgs e)
+        {
+            ContContactos.Clear();
+            foreach (DictionaryEntry contacto in agenda)
+                ContContactos.AppendText(contacto.Key + " - " + contacto.Value + "\n");
+        }
+        //Fin de las funciones o metodos para el ejercicio 5
     }
 }

@@ -56,12 +56,22 @@
             this.AgreClient = new System.Windows.Forms.Button();
             this.AtClient = new System.Windows.Forms.Button();
             this.TBCliente = new System.Windows.Forms.MaskedTextBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.Nombre = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.TBNombre = new System.Windows.Forms.MaskedTextBox();
+            this.TBTalf = new System.Windows.Forms.MaskedTextBox();
+            this.ContContactos = new System.Windows.Forms.RichTextBox();
+            this.Agendar = new System.Windows.Forms.Button();
+            this.BAgenda = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -69,6 +79,8 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(0, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -345,6 +357,96 @@
             this.TBCliente.Size = new System.Drawing.Size(100, 20);
             this.TBCliente.TabIndex = 3;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(411, 244);
+            this.tabPage4.TabIndex = 4;
+            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.BAgenda);
+            this.tabPage5.Controls.Add(this.Agendar);
+            this.tabPage5.Controls.Add(this.ContContactos);
+            this.tabPage5.Controls.Add(this.TBTalf);
+            this.tabPage5.Controls.Add(this.TBNombre);
+            this.tabPage5.Controls.Add(this.label9);
+            this.tabPage5.Controls.Add(this.Nombre);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(411, 244);
+            this.tabPage5.TabIndex = 5;
+            this.tabPage5.Text = "Ej 5";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.AutoSize = true;
+            this.Nombre.Location = new System.Drawing.Point(38, 28);
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Size = new System.Drawing.Size(44, 13);
+            this.Nombre.TabIndex = 0;
+            this.Nombre.Text = "Nombre";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(41, 65);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(28, 13);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Telf.";
+            // 
+            // TBNombre
+            // 
+            this.TBNombre.Location = new System.Drawing.Point(94, 28);
+            this.TBNombre.Mask = "LLLLLLLLLLLLLLLLL";
+            this.TBNombre.Name = "TBNombre";
+            this.TBNombre.Size = new System.Drawing.Size(112, 20);
+            this.TBNombre.TabIndex = 2;
+            // 
+            // TBTalf
+            // 
+            this.TBTalf.Location = new System.Drawing.Point(94, 65);
+            this.TBTalf.Mask = "(999) 999-9999";
+            this.TBTalf.Name = "TBTalf";
+            this.TBTalf.Size = new System.Drawing.Size(100, 20);
+            this.TBTalf.TabIndex = 3;
+            // 
+            // ContContactos
+            // 
+            this.ContContactos.Location = new System.Drawing.Point(41, 94);
+            this.ContContactos.Name = "ContContactos";
+            this.ContContactos.Size = new System.Drawing.Size(329, 113);
+            this.ContContactos.TabIndex = 4;
+            this.ContContactos.Text = "";
+            // 
+            // Agendar
+            // 
+            this.Agendar.Location = new System.Drawing.Point(232, 65);
+            this.Agendar.Name = "Agendar";
+            this.Agendar.Size = new System.Drawing.Size(75, 23);
+            this.Agendar.TabIndex = 5;
+            this.Agendar.Text = "Agendar";
+            this.Agendar.UseVisualStyleBackColor = true;
+            this.Agendar.Click += new System.EventHandler(this.Agendar_Click);
+            // 
+            // BAgenda
+            // 
+            this.BAgenda.Enabled = false;
+            this.BAgenda.Location = new System.Drawing.Point(161, 213);
+            this.BAgenda.Name = "BAgenda";
+            this.BAgenda.Size = new System.Drawing.Size(75, 23);
+            this.BAgenda.TabIndex = 6;
+            this.BAgenda.Text = "Agenda";
+            this.BAgenda.UseVisualStyleBackColor = true;
+            this.BAgenda.Click += new System.EventHandler(this.BAgenda_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -362,6 +464,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -396,6 +500,15 @@
         private System.Windows.Forms.RichTextBox ContClient;
         private System.Windows.Forms.Button AtClient;
         private System.Windows.Forms.MaskedTextBox TBCliente;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Button BAgenda;
+        private System.Windows.Forms.Button Agendar;
+        private System.Windows.Forms.RichTextBox ContContactos;
+        private System.Windows.Forms.MaskedTextBox TBTalf;
+        private System.Windows.Forms.MaskedTextBox TBNombre;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label Nombre;
     }
 }
 
