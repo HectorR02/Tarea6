@@ -20,7 +20,6 @@ namespace Tarea6
         //Para el ejercicio 3
         Queue clientes;
         //Para el ejercicio 4
-        Hashtable regGastos;
         Stack gastos;
         int numGastos = 1;
         //Para el ejercicio 5
@@ -32,7 +31,6 @@ namespace Tarea6
             diccionario = new Hashtable();
             clientes = new Queue();
             agenda = new Hashtable();
-            regGastos = new Hashtable();
             gastos = new Stack();
             LB.Text = "Dia "+Convert.ToString(numGastos);
         }
