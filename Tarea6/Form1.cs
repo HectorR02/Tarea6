@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,19 @@ namespace Tarea6
         public Form1()
         {
             InitializeComponent();
+        }
+        
+       public float sumatoriaCalf(ArrayList notas)
+        {
+            float sumatoria = 0.0f;
+            foreach (ArrayList dato in notas)
+                sumatoria += dato;
+            return sumatoria;
+        }
+
+        public float promedioCalf(ArrayList notas)
+        {
+            return sumatoriaCalf(notas) / notas.Count;
         }
     }
 }
