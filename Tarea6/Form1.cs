@@ -13,15 +13,20 @@ namespace Tarea6
 {
     public partial class Form1 : Form
     {
+        //para el ejercicio 1
         ArrayList notas;
+        //para el ejercicio 2
         Hashtable diccionario;
+        //Para el ejercicio 3
+        Queue clientes;
         public Form1()
         {
             InitializeComponent();
             notas = new ArrayList();
             diccionario = new Hashtable();
+            clientes = new Queue();
         }
-        
+       //Funciones o metodos para el ejercicio 1
        public float sumatoriaCalf(ArrayList notas)
         {
             float sumatoria = 0.0f;
@@ -29,12 +34,10 @@ namespace Tarea6
                 sumatoria += dato;
             return sumatoria;
         }
-
         public float promedioCalf(ArrayList notas)
         {
             return sumatoriaCalf(notas) / notas.Count;
         }
-
         public float calfMax(ArrayList notas)
         {
             float max = 0.0f;
@@ -43,7 +46,6 @@ namespace Tarea6
                     max = dato;
             return max;
         }
-
         public float calfMin(ArrayList notas)
         {
             float min = 101.0f;
@@ -52,7 +54,6 @@ namespace Tarea6
                     min = dato;
             return min;
         }
-
         private void AgrCalf_Click(object sender, EventArgs e)
         {
             if(!string.IsNullOrEmpty(TBCalf.Text))
@@ -66,7 +67,6 @@ namespace Tarea6
                     TBMax.Text = TBMin.Text = TBProm.Text = null;
             }
         }
-
         private void Resultados_Click(object sender, EventArgs e)
         {
             TBMax.Text = Convert.ToString(calfMax(notas));
@@ -76,5 +76,55 @@ namespace Tarea6
             TBCalf.Focus();
             Resultados.Enabled = false;
         }
+        //Fin de las funciones o metodos para el ejercicio 1
+
+        //Funciones o metodos para el ejercicio 2
+        private void Agregar_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(TBPal.Text) && !string.IsNullOrEmpty(TBDes.Text))
+            {
+                diccionario.Add(TBPal.Text, TBDes.Text);
+                TBPal.Text = TBDes.Text = null;
+                TBPal.Focus();
+                if (!Dicc.Enabled)
+                    Dicc.Enabled = true;
+            }
+        }
+        private void Dicc_Click(object sender, EventArgs e)
+        {
+            foreach (DictionaryEntry palabra in diccionario)
+                ContPal.AppendText(palabra.Key + ": " + palabra.Value + "\n");
+        }
+        //Fin de las funciones o metodos para el ejercicio 2   
+
+        //Funciones o metodos para el ejercicio 3       
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(TBCliente.Text))
+            {
+                clientes.Enqueue(TBCliente.Text);
+                if (!AtClient.Enabled)
+                    AtClient.Enabled = true;
+                TBCliente.Clear();
+                TBCliente.Focus();
+                mostrarClientes(clientes);
+            }
+        }
+        private void mostrarClientes(Queue clientes)
+        {
+            ContClient.Clear();
+            int pos = 1;
+            foreach(string cliente in clientes)
+                ContClient.AppendText(Convert.ToString(pos++) + " - " + cliente + "\n");
+        }
+        private void AtClient_Click(object sender, EventArgs e)
+        {
+            if(clientes.Count > 0)
+                clientes.Dequeue();
+            mostrarClientes(clientes);
+            if (clientes.Count == 0)
+                AtClient.Enabled = false;
+        }
+        //Fin de las funciones o metodos para el ejercicio 3
     }
 }
