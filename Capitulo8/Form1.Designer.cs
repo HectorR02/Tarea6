@@ -52,11 +52,17 @@
             this.TBCad2 = new System.Windows.Forms.TextBox();
             this.RTBOrdenadas = new System.Windows.Forms.RichTextBox();
             this.ordenar = new System.Windows.Forms.Button();
+            this.TBNum1 = new System.Windows.Forms.MaskedTextBox();
+            this.TBnum2 = new System.Windows.Forms.MaskedTextBox();
+            this.CBOperacion = new System.Windows.Forms.ComboBox();
+            this.Resultado = new System.Windows.Forms.Button();
+            this.TBResultado = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.Jutificar.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -225,12 +231,17 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.TBResultado);
+            this.tabPage4.Controls.Add(this.Resultado);
+            this.tabPage4.Controls.Add(this.CBOperacion);
+            this.tabPage4.Controls.Add(this.TBnum2);
+            this.tabPage4.Controls.Add(this.TBNum1);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(335, 233);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.Text = "Ej 4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // tabPage5
@@ -283,7 +294,7 @@
             // 
             // RTBOrdenadas
             // 
-            this.RTBOrdenadas.Location = new System.Drawing.Point(34, 125);
+            this.RTBOrdenadas.Location = new System.Drawing.Point(62, 124);
             this.RTBOrdenadas.Name = "RTBOrdenadas";
             this.RTBOrdenadas.Size = new System.Drawing.Size(220, 78);
             this.RTBOrdenadas.TabIndex = 4;
@@ -298,6 +309,52 @@
             this.ordenar.Text = "Ordenar";
             this.ordenar.UseVisualStyleBackColor = true;
             this.ordenar.Click += new System.EventHandler(this.ordenar_Click);
+            // 
+            // TBNum1
+            // 
+            this.TBNum1.Location = new System.Drawing.Point(42, 59);
+            this.TBNum1.Mask = "99";
+            this.TBNum1.Name = "TBNum1";
+            this.TBNum1.Size = new System.Drawing.Size(38, 20);
+            this.TBNum1.TabIndex = 0;
+            // 
+            // TBnum2
+            // 
+            this.TBnum2.Location = new System.Drawing.Point(234, 59);
+            this.TBnum2.Mask = "99";
+            this.TBnum2.Name = "TBnum2";
+            this.TBnum2.Size = new System.Drawing.Size(49, 20);
+            this.TBnum2.TabIndex = 1;
+            // 
+            // CBOperacion
+            // 
+            this.CBOperacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBOperacion.FormattingEnabled = true;
+            this.CBOperacion.Items.AddRange(new object[] {
+            "Suma",
+            "Resta"});
+            this.CBOperacion.Location = new System.Drawing.Point(121, 59);
+            this.CBOperacion.Name = "CBOperacion";
+            this.CBOperacion.Size = new System.Drawing.Size(74, 21);
+            this.CBOperacion.TabIndex = 2;
+            // 
+            // Resultado
+            // 
+            this.Resultado.Location = new System.Drawing.Point(180, 116);
+            this.Resultado.Name = "Resultado";
+            this.Resultado.Size = new System.Drawing.Size(75, 23);
+            this.Resultado.TabIndex = 3;
+            this.Resultado.Text = "Resultado";
+            this.Resultado.UseVisualStyleBackColor = true;
+            this.Resultado.Click += new System.EventHandler(this.Resultado_Click);
+            // 
+            // TBResultado
+            // 
+            this.TBResultado.Location = new System.Drawing.Point(71, 119);
+            this.TBResultado.Name = "TBResultado";
+            this.TBResultado.ReadOnly = true;
+            this.TBResultado.Size = new System.Drawing.Size(66, 20);
+            this.TBResultado.TabIndex = 4;
             // 
             // Capitulo8
             // 
@@ -315,6 +372,8 @@
             this.Jutificar.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
@@ -347,6 +406,11 @@
         private System.Windows.Forms.TextBox TBCad1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox CBOperacion;
+        private System.Windows.Forms.MaskedTextBox TBnum2;
+        private System.Windows.Forms.MaskedTextBox TBNum1;
+        private System.Windows.Forms.Button Resultado;
+        private System.Windows.Forms.TextBox TBResultado;
     }
 }
 
